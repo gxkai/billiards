@@ -19,6 +19,7 @@ export enum State {
 
 export class Ball {
   pos: Vector3
+  initialPos: Vector3
   vel: Vector3 = zero.clone()
   rvel: Vector3 = zero.clone()
   state: State = State.Stationary
@@ -31,7 +32,13 @@ export class Ball {
 
   constructor(pos, color?) {
     this.pos = pos.clone()
+    this.initialPos = pos.clone()
     this.ballmesh = new BallMesh(color ? color : 0x555555 * Math.random())
+  }
+  reset() {
+    this.pos = this.initialPos
+    this.setStationary()
+    this.updateMesh(0)
   }
 
   update(t) {

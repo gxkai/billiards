@@ -77,6 +77,11 @@ export class Container {
     this.table.updateBallMesh(computedElapsed)
     this.view.update(computedElapsed, this.table.cue.aim)
     this.table.cue.update(computedElapsed)
+    const cueBall = this.table.balls[0]
+    if (!cueBall.onTable()) {
+      cueBall.reset()
+      this.table.cue.moveTo(this.table.balls[0].pos)
+    }
     if (!stateBefore && this.table.allStationary()) {
       this.eventQueue.push(new StationaryEvent())
     } else {
