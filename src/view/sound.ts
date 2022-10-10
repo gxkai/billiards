@@ -1,4 +1,5 @@
 import { AudioListener, Audio, AudioLoader, MathUtils } from "three"
+import {OutcomeType} from "../model/outcome";
 
 export class Sound {
   listener = new AudioListener()
@@ -39,18 +40,18 @@ export class Sound {
   }
 
   eventToSounds(outcome) {
-    if (outcome.type === "collision") {
+    if (outcome.type === OutcomeType.Collision) {
       this.play(this.ballcollision, outcome.incidentSpeed / 60)
       this.ballcollision.setDetune(outcome.incidentSpeed * 10)
     }
-    if (outcome.type === "pot") {
+    if (outcome.type === OutcomeType.Pot) {
       this.play(this.pot, outcome.incidentSpeed / 60)
       this.pot.setDetune(-1000 + outcome.incidentSpeed * 10)
     }
-    if (outcome.type === "cushion") {
+    if (outcome.type === OutcomeType.Cushion) {
       this.play(this.cushion, outcome.incidentSpeed / 120)
     }
-    if (outcome.type === "hit") {
+    if (outcome.type === OutcomeType.Hit) {
       this.play(this.cue, outcome.incidentSpeed / 60)
     }
   }

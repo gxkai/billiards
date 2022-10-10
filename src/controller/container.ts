@@ -81,7 +81,7 @@ export class Container {
       this.eventQueue.push(new StationaryEvent())
     } else {
       if (this.table.outcome.length > 0) {
-        //this.sound.eventToSounds(this.table.outcome.shift())
+        this.sound.eventToSounds(this.table.outcome.shift())
       }
     }
   }

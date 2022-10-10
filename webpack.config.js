@@ -32,7 +32,7 @@ module.exports = {
         }
     },
     performance: { hints: false },
-    mode: 'production',
+    mode: 'development',//'production',
     optimization: {
         minimize: true,
         minimizer: [
