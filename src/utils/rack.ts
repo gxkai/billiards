@@ -23,7 +23,7 @@ export class Rack {
   }
 
   static cueBall() {
-    return new Ball(new Vector3(-11, 0.0, 0), 0xfaebd7)
+    return new Ball(new Vector3(-11, 0.0, 0), 'textures/0.png')
   }
 
   static diamond() {
@@ -32,23 +32,35 @@ export class Rack {
     const pos = new Vector3(TableGeometry.tableX / 2, 0, 0)
     const diamond: Ball[] = []
     diamond.push(Rack.cueBall())
-    diamond.push(new Ball(Rack.jitter(pos), 0xe0de36))
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/1.png'))
     pos.add(diagonal)
-    diamond.push(new Ball(Rack.jitter(pos), 0xff9d00))
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/15.png'))
     pos.sub(across)
-    diamond.push(new Ball(Rack.jitter(pos), 0x521911))
-    pos.add(diagonal)
-    diamond.push(new Ball(Rack.jitter(pos), 0x595200))
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/3.png'))
+    pos.add(across).add(diagonal)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/4.png'))
     pos.sub(across)
-    diamond.push(new Ball(Rack.jitter(pos), 0xff0000))
-    pos.addScaledVector(across, 2)
-    diamond.push(new Ball(Rack.jitter(pos), 0x050505))
-    pos.add(diagonal).sub(across)
-    diamond.push(new Ball(Rack.jitter(pos), 0x0a74c2))
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/8.png'))
     pos.sub(across)
-    diamond.push(new Ball(Rack.jitter(pos), 0x087300))
-    pos.add(diagonal)
-    diamond.push(new Ball(Rack.jitter(pos), 0x3e009c))
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/14.png'))
+    pos.add(across).add(across).add(diagonal)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/13.png'))
+    pos.sub(across)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/5.png'))
+    pos.sub(across)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/12.png'))
+    pos.sub(across)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/6.png'))
+    pos.add(across).add(across).add(across).add(diagonal)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/7.png'))
+    pos.sub(across)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/11.png'))
+    pos.sub(across)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/9.png'))
+    pos.sub(across)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/10.png'))
+    pos.sub(across)
+    diamond.push(new Ball(Rack.jitter(pos), 'textures/2.png'))
     Rack.initialiseIndicies(diamond)
     return diamond
   }

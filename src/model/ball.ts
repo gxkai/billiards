@@ -30,10 +30,10 @@ export class Ball {
 
   readonly transition = 0.05
 
-  constructor(pos, color?) {
+  constructor(pos, textureUrl?) {
     this.pos = pos.clone()
     this.initialPos = pos.clone()
-    this.ballmesh = new BallMesh(color ? color : 0x555555 * Math.random())
+    this.ballmesh = new BallMesh(textureUrl)
   }
   reset() {
     this.pos = this.initialPos

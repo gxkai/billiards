@@ -58,6 +58,7 @@ export class Cushion {
     )
   }
 
+  // @ts-ignore
   static bounce(ball: Ball, t: number) {
     const futurePosition = ball.futurePosition(t)
     if (futurePosition.x > TableGeometry.tableX) {

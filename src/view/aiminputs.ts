@@ -17,7 +17,7 @@ export class AimInputs {
     this.cueBallElement?.addEventListener("click", this.click)
 
     this.cuePowerElement = document.getElementById("cuePower")
-    document.addEventListener("wheel", this.mousewheel)
+    // document.addEventListener("wheel", this.mousewheel)
 
     this.cueHitElement = document.getElementById("cueHit")
     this.cueHitElement?.addEventListener("click", this.hit)

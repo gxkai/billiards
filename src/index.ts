@@ -69,7 +69,6 @@ function onAssetsReady() {
     }
     sc?.send(e)
   }
-
   // trigger animation loops
   container.animate(performance.now())
 }

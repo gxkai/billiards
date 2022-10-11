@@ -40,7 +40,6 @@ export class Keyboard {
   }
 
   keydown = (e) => {
-    console.log(e)
     e = e || window.event
     if (this.pressed[e.code] == null) {
       this.pressed[e.code] = performance.now()

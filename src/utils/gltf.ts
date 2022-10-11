@@ -1,8 +1,10 @@
 import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter.js"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
+import {TextureLoader} from "three";
 
 export function exportGltf(scene) {
   const exporter = new GLTFExporter()
+  // @ts-ignore
   exporter.parse(scene, (gltf) => {
     console.log(gltf)
     downloadObjectAsJson(gltf, "scene.gltf")
@@ -22,6 +24,9 @@ export function importGltf(path, scene, ready) {
     (xhr) => console.log(xhr.loaded + " bytes loaded"),
     (error) => console.log(error)
   )
+}
+export function importTexture(path) {
+  return  new TextureLoader().load(path)
 }
 
 export function downloadObjectAsJson(exportObj, exportName) {
