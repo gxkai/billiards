@@ -25,13 +25,22 @@
 				<button class="hitButton flex-item" id="cueHit">hit</button>
 				<input class="powerSlider flex-item" type="range" min="10" max="100" value="50" id="cuePower" name="cuePower"/>
 			</div>
-			<div style="display: flex; flex-direction: column; flex-grow: 1">
+			<div style="display: flex; flex-direction: column; flex-grow: 1;opacity: 0">
 				<div id="chatoutput" class="chatoutput flex-item">
 				</div>
 				<div id="chatinput" class="chatinput">
 					<input id="chatinputtext" type="text" class="msger-input" placeholder="Enter your message...">
 				    <button id="chatsend" type="submit" class="msger-send-btn">Send</button>
 				</div>	
+			</div>
+			<div style="display: flex;flex-direction: column;align-items: center">
+				<div id="up">up</div>
+				<div style="display: flex">
+					<div id="left">left</div>
+					<div style="width: 40px"></div>
+					<div id="right">right</div>
+				</div>
+				<div id="down">down</div>
 			</div>
 	</div>
 	<script src="vendor.js">

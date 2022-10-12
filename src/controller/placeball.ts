@@ -51,6 +51,24 @@ export class PlaceBall extends ControllerBase {
           TableGeometry.tableY
         )
         break
+      case "ArrowUp":
+        this.container.table.balls[0].pos.x = MathUtils.clamp(
+            round(
+                this.container.table.balls[0].pos.x + input.t * this.placescale
+            ),
+            -TableGeometry.tableX,
+            TableGeometry.tableX,
+        )
+        break
+      case "ArrowDown":
+        this.container.table.balls[0].pos.x = MathUtils.clamp(
+            round(
+                this.container.table.balls[0].pos.x - input.t * this.placescale
+            ),
+            -TableGeometry.tableX,
+            TableGeometry.tableX,
+        )
+        break
       case "movementXUp":
         this.container.table.balls[0].pos.y = MathUtils.clamp(
           round(
